@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Career Page Search</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="search-panel" aria-labelledby="page-title">
+        <div class="title-block" id="page-title">
+          <h1>Fewgle</h1>
+        </div>
+
+        <form id="search-form" class="search-form">
+          <label class="search-label" for="search-query">Search terms</label>
+          <div class="search-row">
+            <input
+              id="search-query"
+              name="q"
+              type="search"
+              autocomplete="off"
+              required
+            />
+            <button type="submit">Search Google</button>
+          </div>
+
+          <div class="filters" aria-label="Search filters">
+            <label>
+              <span>Location</span>
+              <input id="location-query" type="text" autocomplete="off" />
+            </label>
+            <label>
+              <span>Exact phrase</span>
+              <input id="exact-query" type="text" autocomplete="off" />
+            </label>
+          </div>
+
+          <label class="constraint">
+            <input id="job-page-query" type="checkbox" checked />
+            <span>Prefer pages that mention jobs, careers, roles, or openings</span>
+          </label>
+
+          <div class="actions">
+            <button id="copy-query" class="secondary" type="button">Copy Query</button>
+            <a id="preview-link" class="secondary link-button" href="#" target="_blank" rel="noreferrer">Open Preview</a>
+          </div>
+        </form>
+      </section>
+
+      <section class="source-panel" aria-labelledby="sources-title">
+        <div class="source-heading">
+          <h2 id="sources-title">Sources</h2>
+          <div class="source-actions">
+            <button id="select-all" class="text-button" type="button">All</button>
+            <button id="select-core" class="text-button" type="button">Core</button>
+            <button id="select-none" class="text-button" type="button">None</button>
+          </div>
+        </div>
+        <div id="source-list" class="source-list"></div>
+      </section>
+
+      <section class="query-panel" aria-labelledby="query-title">
+        <h2 id="query-title">Google Query</h2>
+        <pre id="query-preview"></pre>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
