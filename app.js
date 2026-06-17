@@ -22,7 +22,6 @@ const sourceList = document.querySelector("#source-list");
 const queryInput = document.querySelector("#search-query");
 const locationInput = document.querySelector("#location-query");
 const exactInput = document.querySelector("#exact-query");
-const jobPageInput = document.querySelector("#job-page-query");
 const preview = document.querySelector("#query-preview");
 const previewLink = document.querySelector("#preview-link");
 const copyButton = document.querySelector("#copy-query");
@@ -67,10 +66,9 @@ function buildQuery() {
   const terms = queryInput.value.trim();
   const exact = quotePhrase(exactInput.value);
   const location = locationInput.value.trim();
-  const jobPageTerms = jobPageInput.checked ? "(job OR jobs OR career OR careers OR role OR opening)" : "";
   const selectedDomains = getSelectedDomains();
   const domainQuery = selectedDomains.map((domain) => `site:${domain}`).join(" OR ");
-  const pieces = [terms, exact, location, jobPageTerms, domainQuery ? `(${domainQuery})` : ""];
+  const pieces = [terms, exact, location, domainQuery ? `(${domainQuery})` : ""];
 
   return pieces.filter(Boolean).join(" ");
 }
