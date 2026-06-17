@@ -43,7 +43,7 @@ function renderSources() {
     checkbox.type = "checkbox";
     checkbox.id = id;
     checkbox.value = source.domain;
-    checkbox.checked = source.core;
+    checkbox.checked = true;
     checkbox.dataset.core = String(source.core);
 
     const text = document.createElement("span");
